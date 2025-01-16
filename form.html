@@ -2,6 +2,33 @@
 <html>
 <head>
     <title>nutrition planner</title>
+    <style>
+        body{
+            color: rgb(255, 255, 255);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: aquamarine;
+        }
+        video{
+            position: absolute;
+            object-fit: cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+           
+        }
+        /* .bg_img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        } */
+       
+       
+    </style>
 </head>
 <body>
     <header>
@@ -17,6 +44,8 @@
             </ul>
         </nav>
     </header>
+    <video src="mylivewallpapers-com-Post-Apocalyptic-Alley-QHD.mp4"  loop autoplay muted></video>
+    <!-- <img src="aura_bg.png" alt="background img" class="bg_img"> -->
     <h2>Welcome to AI Nutrition Planner</h2>
     <h2>Register to Get Your Personalized Nutrition Plan</h2>
     <form>
@@ -44,12 +73,14 @@
         <input type="checkbox" name="name2" value="vegetarian">
         <label>vegetarian</label>
         <input type="checkbox" name="name3" value="non-vegetarian">
-        <label>non-vegetarian</label><br>
-        <br>
+        <label>non-vegetarian</label><br><br>
         <label>Enter your Address :</label>
         <textarea name="message" rows="2" cols="20">
-            
         </textarea><br>
+        <label for="calories">Calorie Intake (500-3000):</label>
+        <input type="range"name="calories" min="500" max="3000" step="100" value="1500" oninput="this.nextElementSibling.value = this.value">
+        <output>1500</output> kcal
+        <br><br>
 
         <label for="goal">Health Goal:</label>
         <input type="text" placeholder="Weight Gain">
@@ -64,6 +95,7 @@
 </article>
 <footer>
     <p> 2025 AI Nutrition Planner | Designed by Janmejay Pandya</p>
+    
 </footer>
 </body>
 </html>
