@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css"> 
+			/* img {
+			  width: 0%;
+			  height: 0px;
+			  border-left: 25px solid transparent;
+			  border-right: 25px solid transparent;
+			  border-bottom: 50px solid red;
+			  background-color: red;
+			  position:relative;
+			  animation-name:Demo;
+			  animation-duration:10s;
+			  animation-iteration-count:infinite;
+			  border-radius: 50%; }
+			 */
+			.hi{
+			 	text-align: center;
+			 	font-size: 50px;
+			 	color: red;
+				padding: 70px;
+			 	
+			 }
+			.box2{
+				width: 50px;
+				height: 50px;
+				border: 16px solid rgb(200, 109, 162);
+				border-top: 16px solid wheat;
+				/* background-color: red; */
+				border-radius: 50%;
+				margin: auto;
+				animation: loader2 1s linear infinite;
+				
+				
+				
+				
+			}
+			.box{
+				
+				animation: loader 10s linear infinite;
+			}
+			@keyframes loader2 {0%{
+				transform:rotate(0deg)
+				
+			}
+			100%{transform:rotate(360deg)}
+				
+			}
+			@keyframes loader {0%{transform:rotate(0deg) translateY(100px)rotate(0deg);
+				
+			}
+			100%{transform:rotate(360deg) translateY(100px)rotate(-360deg);}
+			}
+	
+			@keyframes Demo{
+				0%{background-color:transparent; left:120px; top:0px;transform:rotate(0deg); }
+				25%{background-color:transparent; left:1405px; top:0px;transform:rotate(90deg);}
+				50%{background-color:transparent; left:1405px; top:600px;transform:rotate(180deg);}
+				75%{background-color:transparent; left:0px; top:600px;transform:rotate(270deg);}
+				100%{background-color:transparent; left:0px; top:0px;transform:rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="hi"></div>
+		<div class="hi"></div>
+		
+		<div class="box">
+			<div class="box2"></div>
+			
+		</div>
+		
+	</body>
+</html>
