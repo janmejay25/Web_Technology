@@ -1,0 +1,23 @@
+*{
+    height: 100%;
+    width: 100%;
+    background-color: bisque;
+}
+div{
+    height: 500px;
+    width: 500px;
+    margin-top: 20px;
+    background-color: crimson;
+    border: 5px dotted white;
+    border-radius: 50px;
+}
+h1{
+    margin: 30px;
+    margin-top: 150px;
+    padding: 25px;
+    height: 50px;
+    width: 50%;
+    position: absolute;
+    text-align: center;
+    background-color: royalblue;
+}

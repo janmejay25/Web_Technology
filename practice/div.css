@@ -1,0 +1,27 @@
+*{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(215, 138, 235);
+}
+div{
+    height: 250px;
+    width: 250px;
+    position: absolute;
+}
+#box1{
+    height: 250px;
+    width: 250px;
+    margin: 50px 40px;
+
+    border: 2px solid rgb(0, 255, 51);
+    background-color: crimson;
+    z-index: 1;
+}
+    
+
+#box2{
+    border: 2px solid yellow;
+    background-color: royalblue;
+    z-index: 2;
+}
+
