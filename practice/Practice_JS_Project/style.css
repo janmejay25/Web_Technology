@@ -1,0 +1,16 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+body{
+    background-color: black;
+}
+h1,h2{
+    background-color: crimson;
+}
+#btn,#btnReset{
+    color: black;
+    padding: 10px 15px;
+    font-size: 30px;
+}
