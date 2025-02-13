@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #container1{
+            background-color: crimson;
+            padding: 100px 15px;
+        }
+        #container2{
+            background-color: rgb(0, 72, 255);
+            padding: 100px 15px;
+        }
+        #container3{
+            background-color: rgb(20, 220, 27);
+            padding: 100px 15px;
+        }
+        #container4{
+            padding: 100px 15px;
+            background-color: rgb(20, 127, 220);
+        }
+        #container5{
+            padding: 100px 15px;
+            background-color: rgb(93, 209, 238);
+        }
+        #container6{
+            padding: 100px 15px;
+            background-color: rgb(220, 170, 20);
+        }
+        #container7{
+            padding: 100px 15px;
+            background-color: rgb(246, 88, 196);
+        }
+        #container8{
+            padding: 100px 15px;
+            background-color: rgb(231, 136, 223);
+        }
+        #container9{
+            padding: 100px 15px;
+            background-color: rgb(95, 248, 102);
+        }
+        #container10{
+            padding: 100px 15px;
+            background-color: rgb(186, 13, 244);
+        }
+        .item{
+            border: 2px solid black;
+            display: inline-flexbox;
+            text-align: center;
+            grid-gap: 20px;
+            animation: colorchange 7s infinite;
+
+        }
+        @media(min-width:200px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+        }
+        @media(min-width:300px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(min-width:400px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(min-width:500px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(4 , 1fr);
+            }
+        }
+        @media(min-width:600px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        @media(min-width:700px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+        /* @media screen {
+            .item{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+        } */
+        @media(min-width: 800px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+        @media(min-width: 1000px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+            }
+        }
+        @media(min-width: 1200px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(9, 1fr);
+            }
+        }
+        @media(min-width: 1400px){
+            .item{
+                display: grid;
+                grid-template-columns: repeat(10, 1fr);
+            }
+        }
+        /* @keyframes colorchange{
+            0%{
+                background-color: crimson;
+            }
+            10%{
+                background-color: rgb(0, 72, 255);
+            }
+
+            20%{
+                background-color: rgb(20, 220, 27);
+            }
+            30%{
+                background-color: rgb(20, 127, 220);
+            }
+            40%{
+                background-color: rgb(93, 209, 238);
+            }
+            50%{
+                background-color: rgb(220, 170, 20);
+            }
+            60%{
+                background-color: rgb(246, 88, 196);
+            }
+            70%{
+                background-color: rgb(231, 136, 223);
+            }
+            80%{
+                background-color: rgb(95, 248, 102);
+            }
+            90%{
+                background-color: rgb(186, 13, 244);
+            }
+            100%{
+                background-color: crimson;
+            }
+        } */
+        .outeritem{
+            border: 15px solid red;
+        }
+        .box2{  
+            /* z-index: 10; */
+				width: 5px;
+				height: 50px;
+				border: 16px solid rgb(200, 109, 162);
+				border-top: 16px solid wheat;
+				/* background-color: red; */
+				border-radius: 50%;
+				margin: auto;
+                /* border: 2px solid red; */
+				animation: loader2 0.1s linear infinite;
+				
+				
+				
+				
+			}
+			.box{
+                position: absolute;
+                left:50%;
+                top: 40%;
+                transform: translate(-50%, -50%);
+
+                /* z-index:-1; */
+                /* border: 2px solid red; */
+                
+				animation: loader 0.1s linear infinite;
+			}
+			/* @keyframes loader2 {
+				0%{transform:rotate(0deg)
+				
+			}
+			100%{transform:rotate(360deg)}
+				
+			}
+			@keyframes loader {0%{transform:rotate(0deg) translateY(100px)rotate(0deg);
+				
+			}
+			100%{transform:rotate(360deg) translateY(100px)rotate(-360deg);}
+			}
+	
+			@keyframes Demo{
+				0%{background-color:transparent; left:120px; top:0px;transform:rotate(0deg); }
+				25%{background-color:transparent; left:1405px; top:0px;transform:rotate(90deg);}
+				50%{background-color:transparent; left:1405px; top:600px;transform:rotate(180deg);}
+				75%{background-color:transparent; left:0px; top:600px;transform:rotate(270deg);}
+				100%{background-color:transparent; left:0px; top:0px;transform:rotate(360deg);}
+			} */
+
+    </style>
+</head>
+<body>
+    <section class="outeritem">
+        
+         <div class="item">
+            <div class="box">
+                <div class="box2"></div>
+            </div>
+    <div id="container1">item 1</div>
+    <div id="container2">item 2</div>
+    <div id="container3">item 3</div>
+    <div id="container4">item 4</div>
+    <div id="container5">item 5</div>
+    <div id="container6">item 6</div>
+    <div id="container7">item 7</div>
+    <div id="container8">item 8</div>
+    <div id="container9">item 9</div>
+    <div id="container10">item 10</div>
+</div>
+    </section>
+   
+        
+   
+</body>
+</html>
