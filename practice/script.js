@@ -132,3 +132,15 @@ function Person(first, last, age, eyecolor) {
 
 const myMother = new Person("John", "Doe", 50, "blue");
 console.log(myMother.age); // Outputs: 50
+
+// let and var 
+function testVarLet() {
+  if (true) {
+      var x = 10; // var is function-scoped
+      let y = 20; // let is block-scoped
+  }
+  console.log(x); // ✅ Works: var is function-scoped
+  console.log(y); // ❌ Error: let is block-scoped
+}
+
+testVarLet();
