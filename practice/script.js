@@ -119,3 +119,16 @@ function Person(first, last, age, eyecolor) {
   }
   const myFather = new Person("John", "Doe", 50, "blue");
   console.log(myFather.firstName)
+
+  // class
+  class Person {
+    constructor(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+    }
+}
+
+const myMother = new Person("John", "Doe", 50, "blue");
+console.log(myMother.age); // Outputs: 50
