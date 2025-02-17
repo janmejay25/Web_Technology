@@ -144,8 +144,3 @@ function testVarLet() {
 }
 
 testVarLet();
-
-
-
-
-// let and var
