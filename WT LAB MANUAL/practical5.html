@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nutrition Planner</title>
+    <style>
+        body {
+            background-color: #0D1B2A;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            margin-top: 100px;
+        }
+        .meal-card {
+            display: inline-block;
+            padding: 20px;
+            background: #1B263B;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #3DCCC7;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 5s forwards;
+        }
+        @keyframes fadeInUp {
+            /* from {
+                opacity: 0;
+                transform: translateY(20px);
+                transform: scale(1);
+                box-shadow: 0 0 10px #F4D03F;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(15px);
+                transform: scale(1.5);
+                box-shadow: 0 0 20px #F4D03F;
+            } */
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(1);
+                box-shadow: 0 0 10px transparent;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1.1);
+                box-shadow: 0 0 20px #F4D03F;
+            }
+        }
+        .ai-assistant {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: #f43f3f;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #f43f3f;
+            animation: pulse 1.5s infinite alternate;
+        }
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+                box-shadow: 0 0 10px #F4D03F;
+            }
+            to {
+                transform: scale(1.1);
+                box-shadow: 0 0 20px #F4D03F;
+            }
+        }
+        .food-icons img {
+            width: 50px;
+            margin: 10px;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="ai-assistant"></div> -->
+    <div class="container">
+        <div class="meal-card">
+            <h2>AI Nutrition Planner</h2>
+            <p>Personalized meal plan based on your health goals.</p>
+        </div>
+        
+    <!-- </div>
+    <div class="food-icons">
+        <img src="https://cdn-icons-png.flaticon.com/128/1995/1995599.png" alt="Apple">
+        <img src="https://cdn-icons-png.flaticon.com/128/1046/1046740.png" alt="Carrot">
+        <img src="https://cdn-icons-png.flaticon.com/128/3081/3081877.png" alt="Salad">
+    </div>  -->
+</body>
+</html>
