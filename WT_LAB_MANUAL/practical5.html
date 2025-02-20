@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nutrition Planner Sale</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: rgb(0, 0, 0);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .border-container {
+            position: relative;
+            display: inline-block;
+            padding: 30px;
+            border: 15px solid transparent;
+            border-image: linear-gradient(45deg, #F4D03F, #3DCCC7, #F4D03F) 1;
+            animation: borderGlow 3s linear infinite;
+        }
+        @keyframes borderGlow {
+            0% {
+                border-image-source: linear-gradient(45deg, #F4D03F, #cc3d3d, #4e3ff4);
+            }
+            50% {
+                border-image-source: linear-gradient(45deg, #cc3d3d, #F4D03F, #3DCCC7);
+            }
+            100% {
+                border-image-source: linear-gradient(45deg, #e83ff4, #3DCCC7, #F4D03F);
+            }
+        }
+        .moving-text {
+            /* position: absolute; */
+            top: 200px;
+            width: 650px;
+            margin-left: 0%;
+            /* margin-top: 190px; */
+            white-space: nowrap;
+            overflow: hidden;
+            /* border: 2px solid red; */
+        }
+        .moving-text span {
+            display: inline-block;
+            color: #F4D03F;
+            font-size: 18px;
+            font-weight: bold;
+            animation: moveText 8s linear infinite;
+        }
+        @keyframes moveText {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+/* loading bar */
+        .box2{
+				width: 50px;
+				height: 50px;
+				border: 16px solid rgb(69, 87, 228);
+				border-top: 16px solid wheat;
+				/* background-color: red; */
+				border-radius: 50%;
+				margin: auto;
+				animation: loader2 0.9s linear infinite;
+			}
+			/* .box{
+				
+				animation: loader 1s linear infinite;
+			} */
+			@keyframes loader2 {
+				0%{transform:rotate(0deg)
+				
+			}
+			100%{transform:rotate(360deg)}
+				
+			}
+			/* @keyframes loader {0%{transform:rotate(0deg) translateY(100px)rotate(0deg);
+				
+			}
+			100%{transform:rotate(360deg) translateY(100px)rotate(-360deg);}
+			} */
+/* 	
+			@keyframes Demo{
+				0%{background-color:transparent; left:120px; top:0px;transform:rotate(0deg); }
+				25%{background-color:transparent; left:1405px; top:0px;transform:rotate(90deg);}
+				50%{background-color:transparent; left:1405px; top:600px;transform:rotate(180deg);}
+				75%{background-color:transparent; left:0px; top:600px;transform:rotate(270deg);}
+				100%{background-color:transparent; left:0px; top:0px;transform:rotate(360deg);}
+			} */
+            .hi{
+			 	text-align: center;
+			 	font-size: 50px;
+			 	color: red;
+				padding: 70px;
+			 	
+			 }
+    </style>
+</head>
+<body>
+    <div class="border-container">
+        <h2>AI Nutrition Planner</h2>
+        <p>Personalized meal plans tailored to your health goals.</p>
+        <div class="moving-text"><span>🔥 Limited Time Offer: 50% OFF on AI Nutrition Plans! 🔥</span></div>
+    </div>
+    <div class="hi"></div>
+		<div class="hi"></div>
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
