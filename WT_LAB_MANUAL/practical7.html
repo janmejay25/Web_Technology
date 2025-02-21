@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript example</title>
+</head>
+<body>
+    <script>
+        var num = 1;
+        var num2 = 1;
+        var z= prompt("Enter the number of even and odd numbers you want to print");
+        console.log(z);
+        function sortnum(){
+            for(let j = 0;j<z;j++){
+                if(num%2==0){
+                    document.write(num + ", ");
+                }
+                num++;
+            }
+        }
+        function sortnum2(){
+            for(let k = 0;k<z;k++){
+                if(num2%2 !==0){
+                    document.write(num2);
+                    document.write(", ");
+                    }
+                    num2++;
+                }
+            }
+    
+
+        document.write("even number :-");
+        document.write("<br>");
+        sortnum();
+        document.write("<br>");
+        document.write("<br>");
+        document.write("odd number :-");
+        document.write("<br>");
+        sortnum2();
+        
+
+    </script>
+</body>
+</html>
