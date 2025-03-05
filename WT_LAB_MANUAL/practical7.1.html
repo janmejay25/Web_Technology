@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Nutrition Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       *{
+        margin: 0;
+        padding : 0;     
+        }
+    html,body{
+        height :100%;
+        width :100%;
+        }
+        header{
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            /* text-align: center; */
+        }
+        .logo{
+            font-size: 25px;
+            font-weight: bold;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+        nav ul li{
+            margin: 10px 10px;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        .container{
+            display: flex;
+            height: 100%;
+        }
+        .sidebar{
+            background-color: #2E7D32;
+            color: #fff;
+            width: 10%;
+            padding: 20px;
+        }
+        .sidebar ul{
+            list-style: none;
+        }
+        .sidebar ul li{
+            margin: 10px 0;
+            /* text-decoration: none; */
+        }
+        .sidebar ul li a{
+            color: #fff;
+            text-decoration: none;
+        }
+        .dashboard{
+            width: 90%;
+            padding: 20px;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card{
+            background-color: #A5D6A7;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        footer{
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        #welcomeText{
+            margin-right: 400px;
+            font-size: x-large;
+        }
+        #formreg{
+            /* border:2px solid red; */
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #A5D6A7;
+        }
+        @media (max-width: 1024px) {
+            .sidebar{
+                width: 20%;
+            }
+            .dashboard{
+                width: 80%;
+            }
+        }
+        @media (max-width: 768px) {
+            .sidebar{
+                display: none;
+            }
+            .dashboard{
+                width: 100%;
+            }
+            .grid-container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .grid-container{
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">AI Nutrition Planner</div>
+        <nav>
+            <ul id="navList">
+                <li id="welcomeText">Welcome, Guest</li>
+                <!-- <li><a href="#">Home</a></li>
+                <li><a href="#">Plans</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Logout</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>User Panel</h2>
+            <ul id="sidebarList"></ul>
+            
+            <!-- <li><a href="#">Dashboard</a></li>
+            <li><a href="#">My Meals</a></li>
+            <li><a href="#">Health Stats</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul> -->
+    </aside>
+    
+    <main class="dashboard">
+        <section class="grid-container">
+            <div class="card">Today's Meal Plan</div>
+            <div class="card">Nutritional Intake</div>
+            <div class="card">Weekly Progress</div>
+            <div class="card">Recommended Recipes</div>
+        </section>
+        <div id="formreg">
+        <h2>Register</h2>
+        <input type="text" id="name" placeholder="Enter your name" required><br>
+        <input type="password" id="password" placeholder="Enter password" required><br>
+        <input type="password" id="confirmPassword" placeholder="Confirm password" required><br>
+        <button onclick="registerUser()">Register</button>
+    </div>
+        </main>
+    </div>
+    
+
+    <footer>
+        <p>&copy; 2025 AI Nutrition Planner. All rights reserved.</p>
+    </footer>
+    <script>
+           const navItems = [
+            { name: "Home", icon: "home.png", link: "#" },
+            { name: "Plans", icon: "plans.png", link: "#" },
+            { name: "Profile", icon: "profile.png", link: "#" },
+            { name: "Logout", icon: "logout.png", link: "#" }
+        ];
+
+        const sidebarItems = [
+            { name: "Dashboard", icon: "dashboard.png", link: "#" },
+            { name: "My Meals", icon: "meals.png", link: "#" },
+            { name: "Health Stats", icon: "health.png", link: "#" },
+            { name: "Settings", icon: "settings.png", link: "#" }
+        ];
+
+        function loadNavbar() {
+            let navList = document.getElementById("navList");
+            navItems.forEach(item => {
+                let li = document.createElement("li");
+                li.innerHTML = `<img src="${item.icon}" > <a href="${item.link}">${item.name}</a>`;
+                navList.appendChild(li);
+            });
+        }
+
+        function loadSidebar() {
+            let sidebarList = document.getElementById("sidebarList");
+            sidebarItems.forEach(item => {
+                let li = document.createElement("li");
+                li.innerHTML = `<img src="${item.icon}" > <a href="${item.link}">${item.name}</a>`;
+                sidebarList.appendChild(li);
+            });
+        }
+
+        window.onload = function() {
+            loadNavbar();
+            loadSidebar();
+            let registeredName = localStorage.getItem("registeredName");
+            if (registeredName) {
+                document.getElementById("welcomeText").textContent = "Welcome, " + registeredName;
+            }
+        };
+
+
+//reg function
+        function registerUser() {
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            localStorage.setItem("registeredName", name);
+            window.location.href = "practical7.1.html"; // Redirect to home page
+        }
+    </script>
+</body>
+</html>
