@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Details Form</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        form { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input, button { width: 100%; padding: 10px; margin: 8px 0; }
+        button { background: #28a76a; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Birth Details Form</h2>
+    <form id="birthForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="date" id="dob" required>
+        <input type="time" id="birthTime">
+        <input type="text" id="birthPlace" placeholder="Birthplace (City, Country)" required>
+        <input type="tel" id="phone" placeholder="WhatsApp Number (+91XXXXXXXXXX)" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      document.getElementById("birthForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let formData = new FormData();
+    formData.append("name", document.getElementById("name").value);
+    formData.append("dob", document.getElementById("dob").value);
+    formData.append("birthTime", document.getElementById("birthTime").value);
+    formData.append("birthPlace", document.getElementById("birthPlace").value);
+    formData.append("phone", document.getElementById("phone").value);
+
+    const url = "https://script.google.com/macros/s/AKfycbwDk6XX5KJrcaTMwfuPcFrltm9i5lMKtJasTtWXzrfP5M9Ra7fkRRjAG2TK7VTCSMA9bQ/exec"; // Replace with your actual Web App URL
+
+    fetch(url, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Response from Google Apps Script:", data);
+        alert("Form submitted successfully!");
+        document.getElementById("birthForm").reset();
+    })
+    .catch(error => console.error("Error:", error));
+});
+
+    </script>
+
+</body>
+</html>

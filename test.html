@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vars.css" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+        .home-page,
+.home-page * {
+  box-sizing: border-box;
+}
+.home-page {
+  background: #fafdf2;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1440px;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 0px;
+}
+.top-banner {
+  background: var(--dark-green-15, #1a3129);
+  border-style: solid;
+  border-color: var(--dark-green-20, #234338);
+  border-width: 0px 0px 1px 0px;
+  padding: 14px 162px 14px 162px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container {
+  background: var(--dark-green-20, #234338);
+  border-radius: 6px;
+  border-style: solid;
+  border-color: var(--dark-green-25, #2c5446);
+  border-width: 1px;
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.sub-container {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+.cricket-ball-fill {
+  width: 85.38%;
+  height: 85.42%;
+  position: absolute;
+  right: 7.48%;
+  left: 7.14%;
+  bottom: 7.44%;
+  top: 7.14%;
+}
+.group {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+  overflow: visible;
+}
+.text {
+  color: var(--absolute-white, #ffffff);
+  text-align: left;
+  font-family: "Urbanist-Medium", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+}
+.icon2 {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  overflow: visible;
+}
+.abstract-design {
+  flex-shrink: 0;
+  width: 194.17px;
+  height: 100px;
+  position: absolute;
+  left: 40px;
+  top: calc(50% - 46px);
+  overflow: visible;
+}
+.abstract-design2 {
+  flex-shrink: 0;
+  width: 194.17px;
+  height: 100px;
+  position: absolute;
+  right: -154.35px;
+  top: calc(50% - 46px);
+  transform: translate(-194.89px, 24px);
+  overflow: visible;
+}
+.navbar {
+  background: var(--dark-green-15, #1a3129);
+  border-style: solid;
+  border-color: var(--green-90, #eef8d3);
+  border-width: 0px 0px 1px 0px;
+  padding: 20px 162px 20px 162px;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 93px;
+  position: relative;
+}
+.logo {
+  width: 194.62px;
+  height: 45px;
+  position: absolute;
+  left: 162px;
+  top: 24px;
+}
+.frame-2608168 {
+  width: 23.12%;
+  height: 100%;
+  position: absolute;
+  right: 76.88%;
+  left: 0%;
+  bottom: 0%;
+  top: 0%;
+}
+.petals {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.nutri-pick {
+  color: #ffffff;
+  text-align: left;
+  font-family: "IbmPlexMono-SemiBold", sans-serif;
+  font-size: 32px;
+  line-height: 121.92%;
+  font-weight: 600;
+  position: absolute;
+  right: -25.37%;
+  left: 29.29%;
+  width: 96.08%;
+  bottom: 17.78%;
+  top: 0%;
+  height: 82.22%;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  left: 919px;
+  top: 29px;
+}
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  gap: 26px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text-button {
+  color: var(--green-70, #cbea7b);
+  text-align: left;
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 600;
+  position: relative;
+}
+.text-button2 {
+  color: var(--green-97, #fafdf2);
+  text-align: left;
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 600;
+  position: relative;
+}
+.nav-button {
+  background: #cbea7b;
+  border-radius: 64px;
+  padding: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  position: absolute;
+  left: 1320px;
+  top: 23px;
+}
+.nav-button-content {
+  color: #000000;
+  text-align: center;
+  font-family: "GolosText-SemiBold", sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 600;
+  position: relative;
+}
+.hero-2 {
+  position: absolute;
+  inset: 0;
+}
+.container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 731px;
+  height: 584px;
+  position: absolute;
+  left: 677px;
+  top: 302px;
+}
+.sub-container2 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.sub-container3 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container5 {
+  border-style: solid;
+  border-color: var(--green-70, #cbea7b);
+  border-width: 0px 0px 3px 0px;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.heading {
+  color: var(--dark-green-15, #1a3129);
+  text-align: left;
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  position: relative;
+}
+.heading2 {
+  color: var(--dark-green-15, #1a3129);
+  text-align: left;
+  font-family: "Urbanist-Bold", sans-serif;
+  font-size: 58px;
+  font-weight: 700;
+  position: relative;
+  align-self: stretch;
+}
+.paragraph {
+  color: var(--grey-20, #333333);
+  text-align: left;
+  font-family: "Urbanist-Medium", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 500;
+  position: relative;
+  align-self: stretch;
+}
+.buttons-container2 {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.button {
+  background: var(--green-70, #cbea7b);
+  border-radius: 8px;
+  padding: 16px 20px 16px 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.text2 {
+  color: var(--grey-15, #262626);
+  text-align: left;
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 18px;
+  line-height: 150%;
+  font-weight: 600;
+  position: relative;
+}
+.button2 {
+  background: var(--green-95, #f6fbe9);
+  border-radius: 8px;
+  border-style: solid;
+  border-color: var(--green-85, #e5f5bd);
+  border-width: 1px;
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.sub-container4 {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container6 {
+  border-radius: 58px;
+  border-style: solid;
+  border-color: var(--green-70, #cbea7b);
+  border-width: 1px;
+  padding: 8px 10px 8px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.image {
+  border-radius: 53px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  object-fit: cover;
+}
+.image2 {
+  margin: 0 0 0 -20px;
+  border-radius: 53px;
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  object-fit: cover;
+}
+.text3 {
+  text-align: left;
+  font-family: "-", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 400;
+  position: relative;
+}
+.text-3-span {
+  color: var(--dark-green-40, #468671);
+  font-family: "Urbanist-Bold", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 700;
+}
+.text-3-span2 {
+  color: var(--grey-20, #333333);
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+}
+.text-3-span3 {
+  color: var(--dark-green-20, #234338);
+  font-family: "Urbanist-SemiBold", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+  font-weight: 600;
+}
+.ellipse-1 {
+  background: #234338;
+  border-radius: 50%;
+  width: 116px;
+  height: 105px;
+  position: absolute;
+  left: 1311px;
+  top: 898px;
+}
+.chat-bubble {
+  width: 67px;
+  height: 79px;
+  position: absolute;
+  left: 1402px;
+  top: 911px;
+  transform: translate(-67px, 0px);
+  overflow: visible;
+}
+.ai-nutri-plate {
+  border-radius: 0px 0px 50px 0px;
+  width: 621px;
+  height: 801px;
+  position: absolute;
+  left: 23px;
+  top: 203px;
+  object-fit: cover;
+}
+      a,
+      button,
+      input,
+      select,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        background: none;
+
+        -webkit-font-smoothing: antialiased;
+      }
+
+      menu,
+      ol,
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="home-page">
+      <div class="header">
+        <div class="top-banner">
+          <div class="container">
+            <div class="sub-container">
+              <div class="icon">
+                <div class="cricket-ball-fill">
+                  <img class="group" src="group0.svg" />
+                </div>
+              </div>
+              <div class="text">
+                Join Our Personalized Nutrition Demo For Free
+              </div>
+            </div>
+            <img class="icon2" src="icon1.svg" />
+            <img class="abstract-design" src="abstract-design0.svg" />
+            <img class="abstract-design2" src="abstract-design1.svg" />
+          </div>
+        </div>
+        <div class="navbar">
+          <div class="logo">
+            <div class="frame-2608168">
+              <img class="petals" src="petals0.svg" />
+            </div>
+            <div class="nutri-pick">NutriPick</div>
+          </div>
+          <div class="container2">
+            <div class="buttons-container">
+              <div class="text-button">Home</div>
+              <div class="text-button2">About</div>
+              <div class="text-button2">Pricing</div>
+              <div class="text-button2">Contact Us</div>
+              <div class="text-button2">Blog</div>
+            </div>
+          </div>
+          <div class="nav-button">
+            <div class="nav-button-content">Sign Up</div>
+          </div>
+        </div>
+      </div>
+      <div class="container3">
+        <div class="sub-container2">
+          <div class="container4">
+            <div class="sub-container3">
+              <div class="container5">
+                <div class="heading">Transform Your ❤️ Health with</div>
+              </div>
+              <div class="heading2">Personalized AI Nutrition Coaching</div>
+            </div>
+            <div class="paragraph">
+              Achieve your health goals with ease! Our AI-powered Nutrition
+              Planner creates personalized meal plans tailored to your dietary
+              preferences, health needs, and lifestyle. From weight management
+              to fitness optimization, we’ve got you covered. Start your journey
+              to better health today with intelligent, hassle-free nutrition
+              coaching
+            </div>
+          </div>
+          <div class="buttons-container2">
+            <div class="button">
+              <div class="text2">Get Starter Today</div>
+            </div>
+            <div class="button2">
+              <div class="text2">Contact Us</div>
+            </div>
+          </div>
+        </div>
+        <div class="sub-container4">
+          <div class="container6">
+            <img class="image" src="image0.png" />
+            <img class="image2" src="image1.png" />
+            <img class="image2" src="image2.png" />
+          </div>
+          <div class="text3">
+            <span>
+              <span class="text-3-span">430+</span>
+              <span class="text-3-span2"></span>
+              <span class="text-3-span3">Happy Customers</span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="ellipse-1"></div>
+      <img class="chat-bubble" src="chat-bubble0.svg" />
+      <img class="ai-nutri-plate" src="ai-nutri-plate0.png" />
+    </div>
+  </body>
+</html>
