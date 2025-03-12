@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+    <style>
+        form{
+            margin: 0 auto;
+            width: 50%;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        input{
+            margin: 10px;
+            padding: 5px;
+        }
+        input[type="button"]{
+            margin: 10px;
+            padding: 5px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <label for="name" >UserName</label>
+    <input type="text" id="name" name="name">
+    <br>
+    <label for="Password">Password</label>
+    <input type="text" id="password" name="password">
+    <br>
+    <input type="ba" name="" id="">
+    <div id="msg"></div>
+    <label for="Confirm Password">Confirm Password</label>
+    <input type="text" id="confirm_password">
+    <br>
+    <button id="submit" value="submit" onclick="submitVa()">SUbmit</button>
+</form>
+    <script>
+        // console.log("Hello");
+        function submitVa(){
+            // alert("Hello");
+            var a = document.getElementById("name").value;
+            // alert(a);
+            var password = document.getElementById("password").value;
+            // alert(password);
+            var confirm_password = document.getElementById("confirm_password").value;
+            var patternpass1 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+            var patternpass2 = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{6,12}$/;
+            var patternpass3 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*@).{6,20}$/;
+
+         if(a == "" || a == null){
+                alert("Please enter the name");
+            }
+            else if(password == ""){
+                alert("Please enter the password");
+            }
+            else if(confirm_password == ""){
+                alert("Please enter the confirm password");
+            }
+            else if(password != confirm_password){
+                alert("Password and Confirm Password do not match");
+            }
+            if(!patternpass1.test(password)){
+                alert("Password should contain atleast one digit, one lowercase and one uppercase letter and should be between 6 to 20 characters");
+            }
+            if(!patternpass2.test(password)){
+                alert("Need special char Password should contain atleast one digit, one lowercase and one uppercase letter and should be between 8 to 12 characters");
+            }
+            if(!patternpass3.test(password)){
+                alert("@ mendetory and need special charPassword should contain atleast one digit, one lowercase and one uppercase letter and should be between 6 to 20 characters");
+            }
+            else{
+                alert("Form Submitted Successfully");
+            }
+
+        }
+var msg = document.getElementById("msg");
+document.innerHTML = "Hello";
+        // submit();
+       
+    </script>
+</body>
+</html>
