@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Left, Scrollable Right</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .main {
+            display: flex;
+            align-items: flex-start; /* Ensures the right section starts from the top */
+        }
+        .left {
+            width: 30%;
+            height: 100vh;
+            background: #f4f4f4;
+            position: sticky;
+            top: 0;
+            padding: 20px;
+            overflow-y: auto; /* Allows scrolling if content overflows */
+        }
+        .right {
+            width: 70%;
+            padding: 20px;
+        }
+        .content {
+            height: 200vh; /* Just for demo */
+            background: lightgray;
+        }
+        .extra-content {
+            padding: 20px;
+            background: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="left">
+        <h2>Sticky Left Sidebar</h2>
+        <p>This stays visible while scrolling.</p>
+    </div>
+    <div class="right">
+        <div class="content">
+            <h2>Scrollable Right Content</h2>
+            <p>Keep adding more content...</p>
+        </div>
+    </div>
+</div>
+
+<!-- Extra Content Below -->
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+<div class="extra-content">
+    <h2>New Section After Main</h2>
+    <p>This is visible and not blocked.</p>
+</div>
+
+</body>
+</html>
