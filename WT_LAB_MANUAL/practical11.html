@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AI Nutrition Planner</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contact-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #formMessage {
+            color: green;
+            margin-top: 15px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="email" id="email" placeholder="Enter your email">
+        <textarea id="message" placeholder="Your message..."></textarea>
+        <button id="submitButton">Submit</button>
+        <div id="formMessage"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            // Button click event for POSTing form data
+            $("#submitButton").click(function () {
+                const name = $("#name").val();
+                const email = $("#email").val();
+                const message = $("#message").val();
+
+                // Simple validation with fade effect for empty fields
+                if (name === "" || email === "" || message === "") {
+                    $("#formMessage").text("All fields are required!").css("color", "red").fadeIn().delay(2000).fadeOut();
+                    return;
+                }
+
+                // POST request to send form data to server
+                $.post("https://jsonplaceholder.typicode.com/posts", { name, email, message }, function (response) {
+                    $("#formMessage").text("Thank you! Your message has been sent.")
+                        .css("color", "green").fadeIn().delay(3000).fadeOut();
+                    $("#name, #email, #message").val("");  // Clear input fields
+                }).fail(function () {
+                    $("#formMessage").text("Failed to send your message. Try again later.")
+                        .css("color", "red").fadeIn().delay(3000).fadeOut();
+                });
+            });
+
+            // Add some visual effects on input focus
+            $("input, textarea").focus(function () {
+                $(this).css("border-color", "#4CAF50").animate({ backgroundColor: "#f0fff0" }, 300);
+            }).blur(function () {
+                $(this).css("border-color", "#ccc").animate({ backgroundColor: "white" }, 300);
+            });
+
+        });
+    </script>
+
+</body>
+</html>
