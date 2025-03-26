@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommendation - AI Nutrition Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 40px;
+        }
+        .recipe-card {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Recommended Recipes</h2>
+
+        <div class="row">
+            <!-- Recipe 1 Card -->
+            <div class="col-md-4">
+                <div class="recipe-card text-center">
+                    <h4>Avocado Toast</h4>
+                    <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Avocado Toast">
+                    <p>Healthy and simple breakfast option.</p>
+                    <button class="btn btn-primary view-recipe-btn" data-bs-target="#recipeModal1">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Recipe 2 Card -->
+            <div class="col-md-4">
+                <div class="recipe-card text-center">
+                    <h4>Quinoa Salad</h4>
+                    <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Quinoa Salad">
+                    <p>Light and nutritious meal for any time.</p>
+                    <button class="btn btn-primary view-recipe-btn" data-bs-target="#recipeModal2">View Recipe</button>
+                </div>
+            </div>
+
+            <!-- Recipe 3 Card -->
+            <div class="col-md-4">
+                <div class="recipe-card text-center">
+                    <h4>Fruit Smoothie</h4>
+                    <img src="https://via.placeholder.com/150" class="img-fluid rounded mb-3" alt="Fruit Smoothie">
+                    <p>Refreshing drink packed with vitamins.</p>
+                    <button class="btn btn-primary view-recipe-btn" data-bs-target="#recipeModal3">View Recipe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recipe Modals -->
+    <div class="modal fade" id="recipeModal1" tabindex="-1" aria-labelledby="recipeModal1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Avocado Toast Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is the detailed recipe for Avocado Toast.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal2" tabindex="-1" aria-labelledby="recipeModal2Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quinoa Salad Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is the detailed recipe for Quinoa Salad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="recipeModal3" tabindex="-1" aria-labelledby="recipeModal3Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Fruit Smoothie Recipe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is the detailed recipe for Fruit Smoothie.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // jQuery functionality to handle button clicks and open modals
+            $(".view-recipe-btn").click(function () {
+                const targetModal = $(this).data("bs-target");
+                $(targetModal).modal("show");  // Open the respective Bootstrap modal
+            });
+
+            // Adding hover effect using jQuery
+            $(".recipe-card").hover(
+                function () {
+                    $(this).css("box-shadow", "0 8px 15px rgba(0, 0, 0, 0.2)");
+                },
+                function () {
+                    $(this).css("box-shadow", "0 4px 10px rgba(0, 0, 0, 0.1)");
+                }
+            );
+
+            // Show alert message when modal is shown
+            $(".modal").on("show.bs.modal", function () {
+                alert("Enjoy your personalized recipe recommendation!");
+            });
+        });
+    </script>
+
+</body>
+</html>
