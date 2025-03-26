@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Intake Tracker - AI Nutrition Planner</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .tracker-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #calorieBox {
+            width: 100px;
+            height: 100px;
+            background-color: #FFA500;
+            margin: 20px auto;
+            line-height: 100px;
+            color: white;
+            font-size: 1.5em;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Calorie Intake Tracker</h2>
+
+    <div class="tracker-container">
+        <input type="number" id="calorieInput" placeholder="Enter meal calories">
+        <button id="addCalories">Add Calories</button>
+        <button id="resetCalories">Reset Tracker</button>
+
+        <div id="calorieBox">0</div>
+
+        <div id="message"></div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            let totalCalories = 0;
+
+            // Function to add calories and animate the calorie box
+            $("#addCalories").click(function () {
+                let mealCalories = parseInt($("#calorieInput").val());
+
+                if (isNaN(mealCalories) || mealCalories <= 0) {
+                    $("#message").text("Please enter a valid calorie amount!").css("color", "red").slideDown().delay(2000).slideUp();
+                    return;
+                }
+
+                totalCalories += mealCalories;
+
+                $("#calorieBox").text(totalCalories);  // Update calorie count
+                $("#calorieBox").animate({ height: "+=20px", width: "+=20px" }, 300);  // Animate box on adding calories
+                $("#calorieInput").val("");  // Clear input field
+            });
+
+            // Reset calories and stop animation
+            $("#resetCalories").click(function () {
+                totalCalories = 0;
+                $("#calorieBox").stop(true, true).animate({ height: "100px", width: "100px" }, 300).text(totalCalories);  // Reset size and value
+                $("#message").text("Calorie tracker has been reset.").css("color", "green").slideToggle().delay(2000).slideToggle();
+            });
+        });
+    </script>
+
+</body>
+</html>
