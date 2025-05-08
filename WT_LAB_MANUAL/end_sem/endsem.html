@@ -1,24 +1,26 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            bg changes
-        </title>
-    </head>
-    <body>
-        <h2>background is rangineia</h2>
-        <script>
-            var colors = ["red","green","blue","yellow","pink","orange"];
-            let index = 0;
-            function changeColor(){
-                document.body.style.backgroundColor = colors[index];
-                index++;
-                if(index >= colors.length){
-                    index = 0;
-                }
-                
-            }
-            setInterval(changeColor, 2000);
-            
-            </script>
-            </body>
+<head>
+  <title>Increasing Font Size</title>
+</head>
+<body>
+  <h2 id="universityText" style="color: blue; font-size: 10px;">
+    SILVER OAK UNIVERSITY
+  </h2>
+
+  <script>
+    let fontSize = 10; // Initial font size in px
+    const maxFontSize = 50; // Maximum font size
+    const textElement = document.getElementById("universityText");
+
+    const interval = setInterval(() => {
+      fontSize += 2; // Increase font size by 2px
+      textElement.style.fontSize = fontSize + "px";
+
+      if (fontSize >= maxFontSize) {
+        clearInterval(interval); // Stop when max size reached
+      }
+    }, 1000); // Every 1 second
+  </script>
+</body>
 </html>
